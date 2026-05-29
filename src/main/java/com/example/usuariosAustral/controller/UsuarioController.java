@@ -32,7 +32,6 @@ public class UsuarioController {
   return service.guardarUsuario(user);
   }
  
-
  @PutMapping
  public Usuario actualizarUsuario(@RequestBody Usuario user){
    return service.actuliaUsuario(user);
