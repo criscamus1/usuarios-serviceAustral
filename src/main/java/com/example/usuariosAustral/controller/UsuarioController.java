@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class UsuarioController {
   private final UsuarioService service;
         public UsuarioController(UsuarioService UsuarioService) {
-                this.service = UsuarioService;        
+            this.service = UsuarioService;        
 }
 @GetMapping
  public List<Usuario> getAllRecursos(){

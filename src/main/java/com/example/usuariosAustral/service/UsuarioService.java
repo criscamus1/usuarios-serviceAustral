@@ -24,7 +24,6 @@ public class UsuarioService {
  }
 
 
-
  public Usuario getById(Integer id){
    return repository.findById(id).orElse(null);
  }
