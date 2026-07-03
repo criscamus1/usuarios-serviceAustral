@@ -9,7 +9,7 @@
 		<relativePath/> 
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>authService</artifactId>
+    <artifactId>usuarios-serviceAustral</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>usuariosAustral</name>
 	<description>Microservicio de Usuarios con OpenAPI y Base de Datos Neon</description>
