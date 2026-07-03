@@ -1,7 +1,6 @@
 package com.example.usuariosAustral.dto;
 
 import jakarta.validation.constraints.*;
-import lombok.Data;
 
 public record CreateUsuarioRequest(
     @NotBlank(message = "El Nombre no puede estar en blanco") String nombre,
