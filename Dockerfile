@@ -5,9 +5,15 @@ COPY pom.xml .
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-# Etapa 2: Imagen final de ejecución usando tu versión Java 25 requerida
-FROM eclipse-temurin:25-jre
+
+
+# Etapa de ejecución
+FROM eclipse-temurin:21-jre
+
 WORKDIR /app
+
 COPY --from=build /app/target/*.jar app.jar
-EXPOSE 8081
-ENTRYPOINT ["java", "-jar", "app.jar"]
+
+EXPOSE 8080
+
+ENTRYPOINT ["java","-jar","app.jar"]

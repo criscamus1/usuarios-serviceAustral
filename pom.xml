@@ -15,7 +15,7 @@
 	<description>Microservicio de Usuarios con OpenAPI y Base de Datos Neon</description>
 	
 	<properties>
-		<java.version>25</java.version>
+		<java.version>21</java.version>
 	</properties>
 
 	<dependencies>
