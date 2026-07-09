@@ -77,7 +77,7 @@ public class UsuarioController {
             examples = @ExampleObject(
                 value = """
                 {
-                  "nombre":"Jorge Sepulveda",  // use ia aca para probar
+                  "nombre":"Jorge Sepulveda",  
                   "correo":"jorge@austral.cl",
                   "telefono":912345678,
                   "rol":"TECNICO"
