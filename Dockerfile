@@ -1,12 +1,13 @@
-# 1. Capa de compilación: Descarga Maven y Java 25 para compilar tu código
-FROM maven:3.9.9-eclipse-temurin-25 AS build
+# Etapa 1: Compilación usando una versión estable de Maven con Java 21
+FROM maven:3.9.9-eclipse-temurin-21 AS build
 WORKDIR /app
-COPY . .
+COPY pom.xml .
+COPY src ./src
 RUN mvn clean package -DskipTests
 
-# 2. Capa de ejecución: Crea una imagen ultra ligera solo con el JRE de Java 25 para correr el jar
-FROM eclipse-temurin:25-jre-jammy
+# Etapa 2: Imagen final de ejecución usando tu versión Java 25 requerida
+FROM eclipse-temurin:25-jre
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
-EXPOSE 8080
+EXPOSE 8081
 ENTRYPOINT ["java", "-jar", "app.jar"]
