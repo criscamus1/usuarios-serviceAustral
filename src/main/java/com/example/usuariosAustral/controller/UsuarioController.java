@@ -87,13 +87,10 @@ public class UsuarioController {
         )
     )
     public ResponseEntity<Usuario> guardarUsuario(
-
             @Valid
             @RequestBody
             CreateUsuarioRequest dto) {
-
         Usuario usuario = usuarioService.guardarUsuario(dto);
-
         return ResponseEntity.status(HttpStatus.CREATED).body(usuario);
     }
     @PutMapping("/{id}")
@@ -111,6 +108,15 @@ public ResponseEntity<Usuario> actualizarUsuario(
         ActualizarUsuario dto) {
     Usuario usuario = usuarioService.actualizarUsuario(id, dto);
     return ResponseEntity.ok(usuario);
+}
+@GetMapping("/rol/{rol}")
+@Operation(summary = "Buscar usuarios por rol",
+    description = "Obtiene todos los usuarios con su respectivo rol."
+)
+@ApiResponse(responseCode = "200", description = "Usuarios encontrados")
+public ResponseEntity<List<Usuario>> buscarPorRol(
+        @PathVariable String rol){
+    return ResponseEntity.ok(usuarioService.buscarPorRol(rol));
 }
     @DeleteMapping("/{id}")
     @Operation(
