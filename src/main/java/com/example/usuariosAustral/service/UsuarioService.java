@@ -24,10 +24,9 @@ public class UsuarioService {
         return repository.findById(id)
                 .orElseThrow(() -> new ExceptionUser("El usuario no fue encontrado"));
     }
-public List<Usuario> buscarPorRol(String rol){
-    return repository.findByRol(rol);
+public List<Usuario> buscarPorRol(String rol) {
+    return repository.findByRolIgnoreCase(rol);
 }
-
 public Usuario guardarUsuario(CreateUsuarioRequest dto) {
     if (repository.existsByCorreo(dto.correo())) {
         throw new ExceptionUser("Ya existe un usuario con ese correo.");
